@@ -48,7 +48,7 @@ for _, row in plot_log.iterrows():
     #CREATE FOLDERS
     if row["Work Request"] == "NOT DONE":
         plot_file_name = str(row[plot_pk]) + ".pdf"
-        plot_folder_path = os.path.join(plot_folder, str(row[plot_pk])
+        plot_folder_path = os.path.join(plot_folder, str(row[plot_pk]))
         
         #CREATE FOLDER AND MOVE FILE
         create_folder_move_file(plot_folder, plot_file_name, plot_folder_path)
@@ -56,7 +56,7 @@ for _, row in plot_log.iterrows():
 
         #COPY SD
         if row["Work Request"] == "NOT DONE":
-            sd_dest = os.path.join(plot_folder_pathm str(row[plot_pk]) + "_SubDiv.xlsx")
+            sd_dest = os.path.join(plot_folder_path, str(row[plot_pk]) + "_SubDiv.xlsx")
             shutil.copy(sd_file, sd_dest)
             sd_files_copied += 1
 
